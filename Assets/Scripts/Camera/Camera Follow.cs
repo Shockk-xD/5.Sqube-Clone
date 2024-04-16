@@ -23,10 +23,10 @@ public class CameraFollow : MonoBehaviour
     }
 
     private void Update() {
-        Vector3 targetPosition = new Vector3(_target.position.x, _target.position.y, transform.position.z);
+        var targetPosition = new Vector3(_target.position.x, _target.position.y, transform.position.z);
 
-        float clampedX = Mathf.Clamp(targetPosition.x, _minX, _maxX);
-        float clampedY = Mathf.Clamp(targetPosition.y, _minY, _maxY);
+        var clampedX = Mathf.Clamp(targetPosition.x, _minX, _maxX);
+        var clampedY = Mathf.Clamp(targetPosition.y, _minY, _maxY);
 
         targetPosition = new Vector3(clampedX, clampedY, targetPosition.z);
 

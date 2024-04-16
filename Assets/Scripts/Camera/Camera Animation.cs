@@ -17,20 +17,20 @@ public class CameraAnimation : MonoBehaviour
         StartCoroutine(CameraAnimationRoutine());
 
         IEnumerator RightAnimation() {
-            Quaternion startRotation = _camera.transform.rotation;
-            Quaternion destinyRotation = Quaternion.Euler(0, 0, _offset);
+            var startRotation = _camera.transform.rotation;
+            var destinyRotation = Quaternion.Euler(0, 0, _offset);
             for (float s = 0; s < _timeToOffset; s += Time.deltaTime) {
-                float t = s / _timeToOffset;
+                var t = s / _timeToOffset;
                 _camera.transform.rotation = Quaternion.Slerp(startRotation, destinyRotation, t);
                 yield return null;
             }
         }
 
         IEnumerator LeftAnimation() {
-            Quaternion startRotation = _camera.transform.rotation;
-            Quaternion destinyRotation = Quaternion.Euler(0, 0, -_offset);
+            var startRotation = _camera.transform.rotation;
+            var destinyRotation = Quaternion.Euler(0, 0, -_offset);
             for (float s = 0; s < _timeToOffset; s += Time.deltaTime) {
-                float t = s / _timeToOffset;
+                var t = s / _timeToOffset;
                 _camera.transform.rotation = Quaternion.Slerp(startRotation, destinyRotation, t);
                 yield return null;
             }

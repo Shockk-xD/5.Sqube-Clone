@@ -19,7 +19,7 @@ public class Portal : MonoBehaviour
     }
 
     private IEnumerator DeactivateAnimation() {
-        float deactivateDuration = 0.5f;
+        const float deactivateDuration = 0.5f;
 
         for (float s = 0; s < deactivateDuration; s += Time.deltaTime) {
             _portal.transform.localScale = Vector3.Lerp(

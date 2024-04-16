@@ -29,7 +29,7 @@ public class UIController : MonoBehaviour
     }
 
     public void UpdateGoldsUI(int oldValue = 0) {
-        int golds = PlayerPrefs.GetInt("Golds", 0);
+        var golds = PlayerPrefs.GetInt("Golds", 0);
 
         StopAllCoroutines();
         StartCoroutine(UpdateIGGoldsTextUI(oldValue, golds));
@@ -38,14 +38,14 @@ public class UIController : MonoBehaviour
     }
 
     private IEnumerator UpdateIGGoldsTextUI(int oldValue, int newValue) {
-        for (int i = oldValue; i <= newValue; i++) {
+        for (var i = oldValue; i <= newValue; i++) {
             _inGameText.text = i.ToString();
             yield return new WaitForSeconds((0.15f * 5) / (newValue - oldValue));
         }
     }
 
     public void Respawn() {
-        int golds = PlayerPrefs.GetInt("Golds", 0);
+        var golds = PlayerPrefs.GetInt("Golds", 0);
 
         _canvasAnimator.SetTrigger("Respawn");
         _playerEnemyInteraction.Respawn();

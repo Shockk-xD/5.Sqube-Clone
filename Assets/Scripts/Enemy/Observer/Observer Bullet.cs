@@ -38,7 +38,7 @@ public class ObserverBullet : MonoBehaviour
 
     private IEnumerator DestroyImmediately() {
         GetComponent<Collider2D>().enabled = false;
-        float destroyAnimationTime = 1f;
+        var destroyAnimationTime = 1f;
         for (float s = 0; s < destroyAnimationTime; s += Time.deltaTime * _destroyTimeMultiplier) {
             _particle.transform.localScale = 
             Vector3.Lerp(Vector3.one, Vector3.zero, s / destroyAnimationTime);

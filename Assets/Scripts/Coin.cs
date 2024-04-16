@@ -11,9 +11,10 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision != null) {
             if (collision.gameObject.CompareTag("Player")) {
-                int golds = PlayerPrefs.GetInt("Golds", 0);
+                var golds = PlayerPrefs.GetInt("Golds", 0);
                 PlayerPrefs.SetInt("Golds", golds + _value);
                 UIController.instance.UpdateGoldsUI(golds);
+                SoundManager.instance.PlaySound(SoundManager.SoundType.CoinCollect);
                 StartCoroutine(Destroy());
             }
         }
@@ -27,7 +28,7 @@ public class Coin : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         
         for (float s = 0; s < _destroyDuration; s += Time.deltaTime) {
-            float t = s / _destroyDuration;
+            var t = s / _destroyDuration;
             transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, t);
             yield return null;
         }

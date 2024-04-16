@@ -29,8 +29,8 @@ public class ObserverScanAbility : MonoBehaviour
         StartCoroutine(Scan());
 
         IEnumerator ToRight() {
-            Quaternion identity = transform.localRotation;
-            Quaternion destiny = Quaternion.Euler(0, 0, _maxRotZ);
+            var identity = transform.localRotation;
+            var destiny = Quaternion.Euler(0, 0, _maxRotZ);
             for (float s = 0; s < _animationTime; s += Time.deltaTime) {
                 transform.localRotation = Quaternion.Slerp(
                     identity,
@@ -43,8 +43,8 @@ public class ObserverScanAbility : MonoBehaviour
         }
 
         IEnumerator ToLeft() {
-            Quaternion identity = transform.localRotation;
-            Quaternion destiny = Quaternion.Euler(0, 0, -_maxRotZ);
+            var identity = transform.localRotation;
+            var destiny = Quaternion.Euler(0, 0, -_maxRotZ);
             for (float s = 0; s < _animationTime; s += Time.deltaTime) {
                 transform.localRotation = Quaternion.Slerp(
                     identity,
@@ -79,7 +79,7 @@ public class ObserverScanAbility : MonoBehaviour
 
     private void LookAtPlayer() {
         if (_playerTransform) {
-            float angle = Mathf.Atan2(_playerTransform.position.y - transform.position.y, _playerTransform.position.x - transform.position.x) * Mathf.Rad2Deg;
+            var angle = Mathf.Atan2(_playerTransform.position.y - transform.position.y, _playerTransform.position.x - transform.position.x) * Mathf.Rad2Deg;
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0f, 0f, angle + 90), _lookSpeed * Time.deltaTime);
         }
     }

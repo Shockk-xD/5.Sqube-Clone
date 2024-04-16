@@ -25,13 +25,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Move() {
-        float speedMultiplier = 1f;
+        var speedMultiplier = 1f;
 
         if (!_isGrounded) {
             speedMultiplier = _flightSpeedMultiplier;
         }
 
-        float horizontalSpeed = Input.GetAxis("Horizontal");
+        var horizontalSpeed = Input.GetAxis("Horizontal");
         _rb.velocity = new Vector2(horizontalSpeed * _speed * speedMultiplier, _rb.velocity.y);
 
         Rotate(horizontalSpeed);
@@ -40,7 +40,12 @@ public class PlayerController : MonoBehaviour {
     private void Jump() {
         if (_isGrounded && Input.GetKeyDown(KeyCode.Space)) {
             _rb.velocity = Vector2.up * _jumpForce;
-            SoundManager.instance.PlaySound(SoundManager.SoundType.Jump);
+
+            if (_jumpForce == _defaultJumpForce) {
+                SoundManager.instance.PlaySound(SoundManager.SoundType.Jump);
+            } else {
+                SoundManager.instance.PlaySound(SoundManager.SoundType.HighJump);
+            }
         }
 
         if (!_isGrounded) {
@@ -66,10 +71,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnCollisionStay2D(Collision2D collision) {
-        bool isGrounded = false;
+        var isGrounded = false;
 
-        for (int i = 0; i < collision.contactCount; i++) {
-            float angle = Vector2.Angle(collision.contacts[i].normal, Vector2.up);
+        for (var i = 0; i < collision.contactCount; i++) {
+            var angle = Vector2.Angle(collision.contacts[i].normal, Vector2.up);
             if (angle < 45) {
                 isGrounded = true;
                 break;

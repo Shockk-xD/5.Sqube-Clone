@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class GemCollector : MonoBehaviour
+public class StoneCollector : MonoBehaviour
 {
     [SerializeField] private GameObject _portal;
 
@@ -9,7 +9,7 @@ public class GemCollector : MonoBehaviour
     public int GemCount { get; private set; } = 0;
     public static readonly int MAX_GEM_COUNT = 2;
 
-    public static GemCollector instance;
+    public static StoneCollector instance;
 
     private void Awake() {
         if (instance == null) {
@@ -29,7 +29,7 @@ public class GemCollector : MonoBehaviour
 
     private IEnumerator ActivatePortal() {
         _portal.SetActive(true);
-        float activateDuration = 0.5f;
+        var activateDuration = 0.5f;
 
         for (float s = 0; s < activateDuration; s += Time.deltaTime) {
             _portal.transform.localScale = Vector3.Lerp(

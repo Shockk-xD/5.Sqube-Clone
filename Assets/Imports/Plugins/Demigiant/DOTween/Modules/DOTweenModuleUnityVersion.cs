@@ -26,16 +26,16 @@ namespace DG.Tweening
         /// <param name="gradient">The gradient to use</param><param name="duration">The duration of the tween</param>
         public static Sequence DOGradientColor(this Material target, Gradient gradient, float duration)
         {
-            Sequence s = DOTween.Sequence();
-            GradientColorKey[] colors = gradient.colorKeys;
-            int len = colors.Length;
-            for (int i = 0; i < len; ++i) {
-                GradientColorKey c = colors[i];
+            var s = DOTween.Sequence();
+            var colors = gradient.colorKeys;
+            var len = colors.Length;
+            for (var i = 0; i < len; ++i) {
+                var c = colors[i];
                 if (i == 0 && c.time <= 0) {
                     target.color = c.color;
                     continue;
                 }
-                float colorDuration = i == len - 1
+                var colorDuration = i == len - 1
                     ? duration - s.Duration(false) // Verifies that total duration is correct
                     : duration * (i == 0 ? c.time : c.time - colors[i - 1].time);
                 s.Append(target.DOColor(c.color, colorDuration).SetEase(Ease.Linear));
@@ -51,16 +51,16 @@ namespace DG.Tweening
         /// <param name="duration">The duration of the tween</param>
         public static Sequence DOGradientColor(this Material target, Gradient gradient, string property, float duration)
         {
-            Sequence s = DOTween.Sequence();
-            GradientColorKey[] colors = gradient.colorKeys;
-            int len = colors.Length;
-            for (int i = 0; i < len; ++i) {
-                GradientColorKey c = colors[i];
+            var s = DOTween.Sequence();
+            var colors = gradient.colorKeys;
+            var len = colors.Length;
+            for (var i = 0; i < len; ++i) {
+                var c = colors[i];
                 if (i == 0 && c.time <= 0) {
                     target.SetColor(property, c.color);
                     continue;
                 }
-                float colorDuration = i == len - 1
+                var colorDuration = i == len - 1
                     ? duration - s.Duration(false) // Verifies that total duration is correct
                     : duration * (i == 0 ? c.time : c.time - colors[i - 1].time);
                 s.Append(target.DOColor(c.color, property, colorDuration).SetEase(Ease.Linear));
@@ -179,7 +179,7 @@ namespace DG.Tweening
                 if (Debugger.logPriority > 0) Debugger.LogMissingMaterialProperty(propertyID);
                 return null;
             }
-            TweenerCore<Vector2, Vector2, VectorOptions> t = DOTween.To(() => target.GetTextureOffset(propertyID), x => target.SetTextureOffset(propertyID, x), endValue, duration);
+            var t = DOTween.To(() => target.GetTextureOffset(propertyID), x => target.SetTextureOffset(propertyID, x), endValue, duration);
             t.SetTarget(target);
             return t;
         }
@@ -195,7 +195,7 @@ namespace DG.Tweening
                 if (Debugger.logPriority > 0) Debugger.LogMissingMaterialProperty(propertyID);
                 return null;
             }
-            TweenerCore<Vector2, Vector2, VectorOptions> t = DOTween.To(() => target.GetTextureScale(propertyID), x => target.SetTextureScale(propertyID, x), endValue, duration);
+            var t = DOTween.To(() => target.GetTextureScale(propertyID), x => target.SetTextureScale(propertyID, x), endValue, duration);
             t.SetTarget(target);
             return t;
         }

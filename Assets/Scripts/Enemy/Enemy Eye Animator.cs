@@ -13,10 +13,10 @@ public class EnemyEyeAnimator : MonoBehaviour
     private void Animate() {
         _angle += Time.deltaTime * _speed;
 
-        float radians = _angle * Mathf.Deg2Rad;
+        var radians = _angle * Mathf.Deg2Rad;
 
-        float x = Mathf.Cos(radians) * _radius;
-        float y = Mathf.Sin(radians) * _radius;
+        var x = Mathf.Cos(radians) * _radius;
+        var y = Mathf.Sin(radians) * _radius;
 
         transform.localPosition = new Vector2(x, y);
     }

@@ -14,7 +14,7 @@ public class PlayerHideAbility : MonoBehaviour
                     Unhide();
                 }
             } else { 
-                for (int i = 0; i < collision.contactCount; i++) {
+                for (var i = 0; i < collision.contactCount; i++) {
                     if (IsGrounded(collision) && Approximately(Vector2.Angle(collision.contacts[i].normal, Vector2.up), 90, 0.1f)) {
                         IsHiding = true;
                         Hide();
@@ -31,7 +31,7 @@ public class PlayerHideAbility : MonoBehaviour
     }
 
     private bool IsGrounded(Collision2D collision) {
-        for (int i = 0; i < collision.contactCount; i++) {
+        for (var i = 0; i < collision.contactCount; i++) {
             if (Vector2.Angle(collision.contacts[i].normal, Vector2.up) == 0) {
                 return true;
             }

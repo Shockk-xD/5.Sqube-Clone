@@ -18,9 +18,14 @@ public class SoundManager : MonoBehaviour
 
     public enum SoundType {
         Jump,
+        HighJump,
         Death,
         AnimatedSpikesOpen,
-        AnimatedSpikesClose
+        AnimatedSpikesClose,
+        StoneCollect,
+        OpeningSound,
+        Ding,
+        CoinCollect
     }
 
     public void PlaySound(SoundType soundType, Vector3? point = null) {

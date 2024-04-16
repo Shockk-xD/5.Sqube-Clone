@@ -27,7 +27,7 @@ public class AnimatedSpikes : MonoBehaviour
         
         IEnumerator DownAnimation() {
             for (float s = 0; s <= _animationDuration; s += Time.deltaTime) {
-                float t = s / _animationDuration;
+                var t = s / _animationDuration;
 
                 transform.localPosition = new Vector2(
                     XPosition,
@@ -40,7 +40,7 @@ public class AnimatedSpikes : MonoBehaviour
 
         IEnumerator UpAnimation() {
             for (float s = 0; s <= _animationDuration; s += Time.deltaTime) {
-                float t = s / _animationDuration;
+                var t = s / _animationDuration;
 
                 transform.localPosition = new Vector2(
                     XPosition,

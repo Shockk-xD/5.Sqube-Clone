@@ -19,7 +19,6 @@ public class PlayerEnemyInteraction : MonoBehaviour
     public static bool IsInvincible => PlayerHideAbility.IsHiding || PlayerEnemyInteraction.isRespawning; 
 
     public void KillPlayer() {
-        SoundManager.instance.PlaySound(SoundManager.SoundType.Death);
         _canvasAnimator.SetTrigger("Death");
         KillComponents();
         Instantiate(_deathParticle, transform);

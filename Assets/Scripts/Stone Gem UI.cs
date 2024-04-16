@@ -10,10 +10,11 @@ public class StoneGemUI : MonoBehaviour
     private void Start() {
         _rectTransform = GetComponent<RectTransform>();
 
-        GemCollector gemCollector = GemCollector.instance;
+        var gemCollector = StoneCollector.instance;
         _rectTransform.SetParent(gemCollector.gemUIParents[gemCollector.GemCount], true);
         gemCollector.IncrementGemCount();
         StartCoroutine(CollectAnimation());
+        SoundManager.instance.PlaySound(SoundManager.SoundType.StoneCollect);
     }
 
     private IEnumerator CollectAnimation() {
