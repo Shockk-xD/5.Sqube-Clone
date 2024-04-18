@@ -11,4 +11,9 @@ public class GameCanvas : MonoBehaviour
     public void PlayUISound(SoundManager.SoundType soundType) {
         SoundManager.instance.PlaySound(soundType);
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
 }

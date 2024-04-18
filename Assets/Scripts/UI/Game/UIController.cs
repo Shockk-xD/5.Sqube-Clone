@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -17,6 +18,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Animator _totalGoldsTextAnimator;
 
     private readonly int _respawnCost = 30;
+    private SceneLoader _sceneLoader;
 
     private void Start() {
         if (instance == null) {
@@ -25,6 +27,7 @@ public class UIController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        _sceneLoader = FindObjectOfType<SceneLoader>();
         UpdateGoldsUI();
     }
 
@@ -55,5 +58,49 @@ public class UIController : MonoBehaviour
         } else {
 
         }
+    }
+
+    public void RetryButtonClick()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (_sceneLoader)
+        {
+            _sceneLoader.LoadScene(currentSceneIndex);
+        } 
+    }
+
+    public void MenuReturnButtonClick()
+    {
+        if (_sceneLoader)
+        {
+            _sceneLoader.LoadScene(0);
+        }
+    }
+
+    public void LoadNextLevel()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        int sceneCount = SceneManager.sceneCountInBuildSettings;
+
+        if (nextSceneIndex != sceneCount && _sceneLoader)
+        {
+            _sceneLoader.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            _sceneLoader.LoadScene(0);
+        }
+    }
+
+    public void PauseButtonClick()
+    {
+        _canvasAnimator.SetTrigger("Pause");
+    }
+
+    public void UnpauseButtonClick()
+    {
+        Time.timeScale = 1;
+        _canvasAnimator.SetTrigger("Unpause");
     }
 }

@@ -5,32 +5,34 @@ using Random = UnityEngine.Random;
 
 public class TransitionController : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _transitionParents;
-    private List<Action> _transitionActions;
+    private Animator[] _transitionAnimators;
+    private Animator _currentTransition;
 
     public Action doTransition;
 
     private void Start()
     {
-        _transitionActions = new(_transitionParents.Length)
-        {
-            FirstTransitionAppear
-        };
+        _transitionAnimators = GetComponentsInChildren<Animator>();
+        _currentTransition = GetRandomTransition();
     }
 
-    private Action GetRandomFadeInTransition()
+    private Animator GetRandomTransition()
     {
-        return _transitionActions[Random.Range(0, _transitionActions.Count)];
+        doTransition = AppearTransition;
+        return _transitionAnimators[Random.Range(0, _transitionAnimators.Length)];
     }
 
-    private void FirstTransitionAppear()
+    private void AppearTransition()
     {
+        _currentTransition.SetTrigger("Appear");
 
-        doTransition = FirstTransitionDisappear;
+        doTransition = DisappearTransition;
     }
 
-    private void FirstTransitionDisappear()
+    private void DisappearTransition()
     {
-        
+        _currentTransition.SetTrigger("Disappear");
+
+        _currentTransition = GetRandomTransition();
     }
 }

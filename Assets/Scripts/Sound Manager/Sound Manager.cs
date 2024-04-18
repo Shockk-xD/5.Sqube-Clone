@@ -25,7 +25,9 @@ public class SoundManager : MonoBehaviour
         StoneCollect,
         OpeningSound,
         Ding,
-        CoinCollect
+        CoinCollect,
+        ButtonClick,
+        UIMoveSound
     }
 
     public void PlaySound(SoundType soundType, Vector3? point = null) {
