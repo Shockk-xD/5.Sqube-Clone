@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -16,6 +17,19 @@ public class Portal : MonoBehaviour
 
     private void DeactivatePortal() {
         StartCoroutine(DeactivateAnimation());
+        UnlockNextLevel();
+    }
+
+    private void UnlockNextLevel()
+    {
+        int unlockedLevel = PlayerPrefs.GetInt("Unlocked Level", 1);
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (unlockedLevel <= currentLevel)
+        {
+            PlayerPrefs.SetInt("Unlocked Level", unlockedLevel + 1);
+            PlayerPrefs.Save();
+        }
     }
 
     private IEnumerator DeactivateAnimation() {

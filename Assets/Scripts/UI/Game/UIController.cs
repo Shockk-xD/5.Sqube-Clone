@@ -62,6 +62,7 @@ public class UIController : MonoBehaviour
 
     public void RetryButtonClick()
     {
+        Time.timeScale = 1;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         if (_sceneLoader)
@@ -72,6 +73,7 @@ public class UIController : MonoBehaviour
 
     public void MenuReturnButtonClick()
     {
+        Time.timeScale = 1;
         if (_sceneLoader)
         {
             _sceneLoader.LoadScene(0);

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Coin : MonoBehaviour
 {
@@ -7,6 +9,17 @@ public class Coin : MonoBehaviour
     [SerializeField] private ParticleSystem _coinPickupParticle;
 
     private readonly float _destroyDuration = 0.5f;
+
+    private void Start()
+    {
+        int unlockedLevel = PlayerPrefs.GetInt("Unlocked Level", 1);
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentLevel < unlockedLevel)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision != null) {

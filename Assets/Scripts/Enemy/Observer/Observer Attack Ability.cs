@@ -1,13 +1,19 @@
+using System;
 using UnityEngine;
 
 public class ObserverAttackAbility : MonoBehaviour
 {
-    [SerializeField] private Transform _playerTransform;
     [SerializeField] private GameObject _bullet;
     [SerializeField] private float _attackDelay = 2f;
 
+    private Transform _playerTransform;
     private bool _canAttack = true;
     public bool isAngry = false;
+
+    private void Start()
+    {
+        _playerTransform = FindObjectOfType<PlayerController>().transform;
+    }
 
     private void Update() {
         if (isAngry && _canAttack && !IsPlayerBehindCover()) {

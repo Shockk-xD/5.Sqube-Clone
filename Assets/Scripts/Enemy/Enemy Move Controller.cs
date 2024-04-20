@@ -12,7 +12,7 @@ public class EnemyMoveController : MonoBehaviour
     protected int _direction = -1;
     private bool _isDelay = false;
 
-    private void Start() {
+    protected virtual void Start() {
         InvokeRepeating(nameof(ClampPosition), 0, _positionClampRepeatDelay);
     }
 

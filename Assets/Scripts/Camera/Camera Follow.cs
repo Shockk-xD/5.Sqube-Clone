@@ -22,7 +22,7 @@ public class CameraFollow : MonoBehaviour
         _maxY = _bounds.bounds.max.y - _camera.orthographicSize;
     }
 
-    private void Update() {
+    private void LateUpdate() {
         var targetPosition = new Vector3(_target.position.x, _target.position.y, transform.position.z);
 
         var clampedX = Mathf.Clamp(targetPosition.x, _minX, _maxX);

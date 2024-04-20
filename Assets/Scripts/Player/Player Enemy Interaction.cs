@@ -37,7 +37,7 @@ public class PlayerEnemyInteraction : MonoBehaviour
     public void Respawn() {
         StartCoroutine(RespawnComponents());
         isRespawning = true;
-        Invoke(nameof(StopRespawning), 5f);
+        StartCoroutine(RespawnAnimation());
     }
 
     private IEnumerator RespawnComponents() {
@@ -64,7 +64,39 @@ public class PlayerEnemyInteraction : MonoBehaviour
         _controller.enabled = true;
     }
 
-    private void StopRespawning() {
+    private IEnumerator RespawnAnimation()
+    {
+        yield return ChangeTransparencySmoothly(0, 1, 0.5f);
+        for (int i = 0; i < 8; i++)
+        {
+            yield return ChangeTransparencySmoothly(1, 150 / 255f, 0.5f);
+            yield return ChangeTransparencySmoothly(150 / 255f, 1, 0.5f);
+        }
+        
         isRespawning = false;
+        
+        IEnumerator ChangeTransparencySmoothly(float defaultTransparency, float targetTransparency, float time)
+        {
+            for (float s = 0; s <= time; s += Time.deltaTime)
+            {
+                float t = s / 0.5f;
+                for (int i = 0; i < _renderers.Length; i++)
+                {
+                    var color = _renderers[i].color;
+                    _renderers[i].color = new Color(
+                        color.r,
+                        color.g,
+                        color.b,
+                        Mathf.Lerp(defaultTransparency, targetTransparency, t)
+                        );
+                }
+
+                _trail.endColor = new Color(_trail.endColor.r, _trail.endColor.g, _trail.endColor.b,
+                    Mathf.Lerp(defaultTransparency, targetTransparency, t));
+                _trail.startColor = new Color(_trail.endColor.r, _trail.endColor.g, _trail.endColor.b,
+                    Mathf.Lerp(defaultTransparency, targetTransparency, t));
+                yield return null; 
+            }
+        }
     }
 }

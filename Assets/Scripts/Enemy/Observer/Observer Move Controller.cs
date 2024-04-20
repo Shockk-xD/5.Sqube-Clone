@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class ObserverMoveController : EnemyMoveController
 {
-    [SerializeField] private Transform _player;
+    private Transform _player;
 
     public bool shouldFollowPlayer = false;
+
+    protected override void Start()
+    {
+        _player = FindObjectOfType<PlayerController>().transform;
+        base.Start();
+    }
 
     override protected void Update() {
         if (shouldFollowPlayer) {

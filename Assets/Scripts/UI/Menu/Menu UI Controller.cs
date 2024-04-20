@@ -18,9 +18,22 @@ public class MenuUIController : MonoBehaviour
     [SerializeField] private RectTransform _settingsPanel;
     [SerializeField] private Ease _settingsPanelMoveEase;
     
-    private SceneLoader _sceneLoader;
-
     public static MenuUIController instance;
+
+    private SceneLoader SceneLoader
+    {
+        get
+        {
+            if (_sceneLoader == null)
+            {
+                _sceneLoader = FindObjectOfType<SceneLoader>();
+            }
+
+            return _sceneLoader;
+        }
+    }
+
+    private SceneLoader _sceneLoader;
 
     private void Awake()
     {
@@ -32,11 +45,6 @@ public class MenuUIController : MonoBehaviour
         {
             instance = this;
         }
-    }
-
-    private void Start()
-    {
-        _sceneLoader = SceneLoader.instance;
     }
 
     public async void PlayButtonClick()
@@ -110,6 +118,6 @@ public class MenuUIController : MonoBehaviour
 
     public void LoadScene(int sceneIndex)
     {
-        _sceneLoader.LoadScene(sceneIndex);
+        SceneLoader.LoadScene(sceneIndex);
     }
 }
