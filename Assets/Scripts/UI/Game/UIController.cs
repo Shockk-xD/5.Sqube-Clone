@@ -37,7 +37,7 @@ public class UIController : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(UpdateIGGoldsTextUI(oldValue, golds));
         _winPanelText.text = golds.ToString();
-        _deathPanelText.text = $"Total Golds: {golds}";
+        _deathPanelText.text = $"{LocalizationManager.instance.GetLocalizedValue("TotalGolds")}: {golds}";
     }
 
     private IEnumerator UpdateIGGoldsTextUI(int oldValue, int newValue) {

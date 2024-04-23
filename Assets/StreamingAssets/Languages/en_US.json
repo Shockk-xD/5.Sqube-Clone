@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "key": "Play",
+      "value": "Play"
+    },
+    {
+      "key": "Settings",
+      "value": "Settings"
+    },
+    {
+      "key": "Exit",
+      "value": "Exit"
+    },
+    {
+      "key": "MusicVolume",
+      "value": "Music"
+    },
+    {
+      "key": "SoundEffectsVolume",
+      "value": "Sound Effects"
+    },
+    {
+      "key": "Language",
+      "value": "Language"
+    },
+    {
+      "key": "Back",
+      "value": "Back"
+    },
+    {
+      "key": "StoneCount",
+      "value": "STONES"
+    },
+    {
+      "key": "Respawn",
+      "value": "Continue"
+    },
+    {
+      "key": "CollectedStones",
+      "value": "Collected Stones"
+    },
+    {
+      "key": "GoldsCount",
+      "value": "Golds"
+    },
+    {
+      "key": "ENG",
+      "value": "ENG"
+    },
+    {
+      "key": "RU",
+      "value": "RU"
+    },
+    {
+      "key": "TotalGolds",
+      "value": "Total Golds"
+    },
+    {
+      "key": "Level",
+      "value": "LEVEL"
+    }
+  ]
+}

@@ -8,6 +8,11 @@ public class LevelUnlocker : MonoBehaviour
     
     private void Start()
     {
+        Invoke(nameof(ConfigureButtons), 0.1f);
+    }
+
+    private void ConfigureButtons()
+    {
         for (int i = 0; i < _levelButtons.Length; i++)
         {
             _levelButtons[i].interactable = false;
@@ -21,6 +26,16 @@ public class LevelUnlocker : MonoBehaviour
             {
                 MenuUIController.instance.LoadScene(levelIndex + 1);
             });
+        }
+        
+        LocalizeButtonTexts();
+    }
+
+    private void LocalizeButtonTexts()
+    {
+        for (int i = 0; i < _levelButtons.Length; i++)
+        {
+            _levelButtons[i].GetComponentInChildren<LocalizedLevelInfoText>().Level = i + 1;
         }
     }
 }

@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "key": "Play",
+      "value": "Играть"
+    },
+    {
+      "key": "Settings",
+      "value": "Настройки"
+    },
+    {
+      "key": "Exit",
+      "value": "Выйти"
+    },
+    {
+      "key": "MusicVolume",
+      "value": "Музыка"
+    },
+    {
+      "key": "SoundEffectsVolume",
+      "value": "Звуки"
+    },
+    {
+      "key": "Language",
+      "value": "Язык"
+    },
+    {
+      "key": "Back",
+      "value": "Назад"
+    },
+    {
+      "key": "StoneCount",
+      "value": "КАМНИ"
+    },
+    {
+      "key": "Respawn",
+      "value": "Респавн"
+    },
+    {
+      "key": "CollectedStones",
+      "value": "Собранные камни"
+    },
+    {
+      "key": "GoldsCount",
+      "value": "Монеты"
+    },
+    {
+      "key": "ENG",
+      "value": "ENG"
+    },
+    {
+      "key": "RU",
+      "value": "RU"
+    },
+    {
+      "key": "TotalGolds",
+      "value": "Кол-во монет"
+    },
+    {
+      "key": "Level",
+      "value": "УРОВЕНЬ"
+    }
+  ]
+}

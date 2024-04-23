@@ -479,6 +479,7 @@ GameObject:
   - component: {fileID: 60646709}
   - component: {fileID: 60646708}
   - component: {fileID: 60646710}
+  - component: {fileID: 60646711}
   m_Layer: 5
   m_Name: Level Info
   m_TagString: Untagged
@@ -540,7 +541,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'LEVEL
 
-    2'
+    INFO'
 --- !u!222 &60646709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -570,6 +571,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &60646711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60646706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0eb5cfb597e8241b42b8097fdba37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useLineBreak: 1
+  _levelAutoSet: 1
+  _changeFont: 0
 --- !u!1 &69851196
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +825,7 @@ GameObject:
   - component: {fileID: 98358906}
   - component: {fileID: 98358908}
   - component: {fileID: 98358907}
+  - component: {fileID: 98358909}
   m_Layer: 5
   m_Name: Level Info Text
   m_TagString: Untagged
@@ -868,7 +885,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: LEVEL 01
+  m_Text: LEVEL INFO
 --- !u!222 &98358908
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -877,6 +894,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98358905}
   m_CullTransparentMesh: 1
+--- !u!114 &98358909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98358905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0eb5cfb597e8241b42b8097fdba37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useLineBreak: 0
+  _levelAutoSet: 1
+  _changeFont: 0
 --- !u!1 &101391945
 GameObject:
   m_ObjectHideFlags: 0
@@ -11430,7 +11462,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 861600920}
+  - {fileID: 1514515385}
   m_Father: {fileID: 1168760698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!66 &416514941
@@ -13628,6 +13662,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842703710}
   m_CullTransparentMesh: 1
+--- !u!1 &861600919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 861600920}
+  m_Layer: 0
+  m_Name: Spike (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &861600920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861600919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 416514940}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881143979
 GameObject:
   m_ObjectHideFlags: 0
@@ -14374,7 +14439,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.98, y: 0.98}
+  m_Size: {x: 0.97, y: 0.97}
   m_EdgeRadius: 0
 --- !u!50 &1039824054
 Rigidbody2D:
@@ -22622,6 +22687,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512596886}
   m_CullTransparentMesh: 1
+--- !u!1 &1514515384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1514515385}
+  m_Layer: 0
+  m_Name: Spike (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1514515385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514515384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 416514940}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1556229295
 PrefabInstance:
   m_ObjectHideFlags: 0
