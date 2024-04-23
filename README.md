@@ -8,6 +8,13 @@
    <img src="https://img.shields.io/badge/No%20Licence-Licence-whitered" alt="License">
 </p>
 
+## Video
+
+<video width="320" height="240" controls>
+  <source src="https://youtu.be/Mt63uI4ZtRY" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## About
 
 Клон игры Sqube Darkness/Escape. Реализованы абсолютно все механики игры. Меню стилизован в стиле Hollow Knight.
