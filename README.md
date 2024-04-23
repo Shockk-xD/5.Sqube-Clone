@@ -1,5 +1,5 @@
 <p align="center">
-      <img src="https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.RHPOSITIVE.squbedarkness.jpg" alt="Project Logo" width="200" height = 200>
+      <img src="https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.RHPOSITIVE.squbedarkness.jpg" alt="Project Logo" width="200">
 </p>
 
 <p align="center">
