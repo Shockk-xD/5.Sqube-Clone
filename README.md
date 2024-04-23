@@ -14,7 +14,7 @@
 
 ## About
 
-Клон игры Sqube Darkness/Escape. Реализованы абсолютно все механики игры. Меню стилизован в стиле Hollow Knight.
+Клон игры Sqube Darkness/Escape. Реализованы абсолютно все механики игры. Меню стилизован в стиле игры Hollow Knight.
 
 ## Distribute
 
