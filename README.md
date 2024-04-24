@@ -10,7 +10,7 @@
 
 ## Video
 
-[Смотреть демонстрацию игры](https://youtu.be/Mt63uI4ZtRY)
+[Смотреть демонстрацию игры](https://youtu.be/Q6g0qQRrDDY)
 
 ## About
 
