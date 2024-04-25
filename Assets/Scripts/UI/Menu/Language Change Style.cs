@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class LanguageChangeStyle : MonoBehaviour
 {
-    [SerializeField] private LocalizationManager _localizationManager;
     [SerializeField] private Text[] _languageButtonTexts;
+    
+    private LocalizationManager _localizationManager;
 
     private void Start()
     {
+        _localizationManager = LocalizationManager.instance;
         ChangeStyle(_localizationManager.CurrentLanguage);
     }
 
@@ -21,5 +23,7 @@ public class LanguageChangeStyle : MonoBehaviour
         }
 
         _languageButtonTexts.First(l => l.name == language).fontStyle = FontStyle.Italic;
+
+        _localizationManager.CurrentLanguage = language;
     }
 }
