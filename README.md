@@ -10,11 +10,11 @@
 
 ## Video
 
-[Смотреть демонстрацию игры](https://youtu.be/Q6g0qQRrDDY)
+[Watch a gameplay demo](https://youtu.be/Q6g0qQRrDDY)
 
 ## About
 
-Клон игры Sqube Darkness/Escape. Реализованы абсолютно все механики игры. Меню стилизован в стиле игры Hollow Knight.
+A clone of the game Sqube Darkness/Escape. Absolutely all of the game's mechanics have been implemented. The menu is styled after Hollow Knight.
 
 ## Distribute
 
