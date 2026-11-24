@@ -23,9 +23,9 @@ A clone of the game Sqube Darkness/Escape. Absolutely all of the game's mechanic
 ## Screenshots
 
 <p>
-      <img src="https://i.ibb.co/2P3bch4/Screenshot-1.png" alt="Screenshot 1">
-      <img src="https://i.ibb.co/DRrN1xH/Screenshot-2.png" alt="Screenshot 2">
-      <img src="https://i.ibb.co/Yt6mjkt/Screenshot-3.png" alt="Screenshot 3">
-      <img src="https://i.ibb.co/pyCQGLm/Screenshot-4.png" alt="Screenshot-4">
-      <img src="https://i.ibb.co/x8Q3KB2/Screenshot-5.png" alt="Screenshot-5">
+      <img src="docs/screenshots/01.png" alt="Screenshot 1">
+      <img src="docs/screenshots/02.png" alt="Screenshot 2">
+      <img src="docs/screenshots/03.png" alt="Screenshot 3">
+      <img src="docs/screenshots/04.png" alt="Screenshot-4">
+      <img src="docs/screenshots/05.png" alt="Screenshot-5">
 </p>
